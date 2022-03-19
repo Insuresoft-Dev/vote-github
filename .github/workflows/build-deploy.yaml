@@ -1,9 +1,6 @@
 name: "Build and deploy - action"
 
-on:
-  push:
-    branches:
-      - master
+on: [workflow_dispatch]
 
 env:
   CLUSTER_NAME: myAKSCluster 
