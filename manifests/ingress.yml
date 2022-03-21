@@ -1,4 +1,4 @@
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: vote-github
@@ -9,6 +9,6 @@ spec:
     -http:
       paths:
       - backend:
-          serviceName: azure-vote-front
-          servicePort: 80
+          service.name: azure-vote-front
+          service.port.number: 80
         path: /
