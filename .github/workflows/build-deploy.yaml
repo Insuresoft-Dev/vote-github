@@ -78,7 +78,7 @@ jobs:
         imagepullsecrets: |
           acr-secret
         strategy: canary
-        percentage: 100
+        percentage: 100 
 
     - name: "If azure deployment was not succeeded"
       if: failure()
