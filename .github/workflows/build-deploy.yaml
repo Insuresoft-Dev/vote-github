@@ -74,7 +74,7 @@ jobs:
           manifests/service.yml
           manifests/ingress.yml
         images: |
-          ${{env.ACR_NAME}}/${{env.IMAGE_NAME}}:${{ github.sha }}
+          ${{env.ACR_NAME}}/${{env.IMAGE_NAME}}:${{ github.sha }}_failed
         imagepullsecrets: |
           acr-secret
         strategy: canary
