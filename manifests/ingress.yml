@@ -1,16 +1,17 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
-metadata: 
-  annotations: 
-    kubernetes.io/ingress.class: nginx
+metadata:
   name: vote-github
-spec: 
-  rules: 
-    ? "-http"
-    : 
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+  -  http:
       paths: 
-        - 
-          backend: 
-            service.name: azure-vote-front
-            service.port.number: 80
-          path: /
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: azure-vote-front
+              port:
+                number: 80
